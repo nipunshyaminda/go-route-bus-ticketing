@@ -63,3 +63,44 @@ seats.forEach(seat => {
     });
 
 });
+
+const bookButtons = document.querySelectorAll(".book-btn");
+
+bookButtons.forEach(button => {
+    button.addEventListener("click", () => {
+
+        const busName = button.dataset.bus;
+
+        localStorage.setItem("selectedBus", busName);
+
+        window.location.href = "seats.html";
+    });
+});
+
+const continueBtn =
+document.getElementById("continueBtn");
+
+continueBtn.addEventListener("click", () => {
+
+    localStorage.setItem(
+        "selectedSeats",
+        JSON.stringify(selected)
+    );
+
+    window.location.href =
+    "booking-summary.html";
+});
+
+const bus =
+localStorage.getItem("selectedBus");
+
+const seats =
+JSON.parse(
+    localStorage.getItem("selectedSeats")
+);
+
+document.getElementById("busName").innerText =
+bus;
+
+document.getElementById("seatNumbers").innerText =
+seats.join(", ");
