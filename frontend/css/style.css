@@ -265,3 +265,85 @@ nav ul li a {
     margin-top:20px;
     text-align:center;
 }
+
+.routes-container{
+    max-width:1000px;
+    margin:50px auto;
+    padding:20px;
+}
+
+.routes-container h1{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.search-form{
+    display:flex;
+    gap:15px;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.search-form input,
+.search-form button{
+    padding:12px;
+    border-radius:8px;
+    border:1px solid #ccc;
+}
+
+.search-form button{
+    background:#2563eb;
+    color:white;
+    border:none;
+    cursor:pointer;
+}
+
+.seat-container{
+    text-align:center;
+    padding:40px;
+}
+
+.bus-layout{
+    display:grid;
+
+    grid-template-columns:repeat(2,80px);
+
+    gap:15px;
+
+    justify-content:center;
+
+    margin:30px 0;
+}
+
+.seat{
+    background:#22c55e;
+
+    color:white;
+
+    padding:20px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-weight:bold;
+}
+
+.seat.selected{
+    background:#2563eb;
+}
+
+.seat.booked{
+    background:#ef4444;
+    cursor:not-allowed;
+}
+
+#confirmBtn{
+    padding:12px 25px;
+    border:none;
+    border-radius:8px;
+    background:#16a34a;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}

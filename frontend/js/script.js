@@ -25,3 +25,41 @@ if (loginForm) {
         alert("Login Successful");
     });
 }
+
+const seats = document.querySelectorAll(".seat");
+const selectedText = document.getElementById("selectedSeats");
+const totalPrice = document.getElementById("totalPrice");
+
+let selected = [];
+const seatPrice = 1500;
+
+seats.forEach(seat => {
+
+    if(seat.classList.contains("booked")){
+        return;
+    }
+
+    seat.addEventListener("click", () => {
+
+        seat.classList.toggle("selected");
+
+        const seatNo = seat.innerText;
+
+        if(selected.includes(seatNo)){
+            selected =
+            selected.filter(s => s !== seatNo);
+        }
+        else{
+            selected.push(seatNo);
+        }
+
+        selectedText.innerText =
+        "Selected Seats: " +
+        selected.join(", ");
+
+        totalPrice.innerText =
+        "Total: Rs. " +
+        (selected.length * seatPrice);
+    });
+
+});
